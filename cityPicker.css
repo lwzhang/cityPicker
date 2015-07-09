@@ -1,0 +1,56 @@
+dl, dt, dd, ul {
+    margin: 0;
+}
+.picker-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+    overflow: auto;
+    -webkit-user-select: none;
+
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.picker-box dt {
+    background-color: #dbdbdb;
+    padding: 5px 20px;
+}
+
+.picker-box dd {
+    padding: 8px 20px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.city-picker li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.navbar {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    width: 20px;
+    transform: translate(0, -50%);
+    border-radius: 5px;
+}
+
+.navbar a {
+    display: block;
+    text-align: center;
+    color: gray;
+}
+
+.navbar.active {
+    background-color: grey;
+}
+
+.navbar.active a {
+    color: #fff;
+}
