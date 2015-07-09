@@ -93,6 +93,7 @@ var provinces = {
             var pickerBox = $(".picker-box");
             if (pickerBox[0]) {
                 pickerBox.show();
+                $(".navbar").show();
             } else {
                 this.create();
             }
@@ -158,6 +159,7 @@ var provinces = {
                 that.createCityList(letter, that.pro);
 
                 $(this).hide();
+                $(".navbar").hide();
             }
         });
     };
@@ -168,7 +170,7 @@ var provinces = {
             var target = e.target;
             if (target.tagName.toLowerCase() == "li") {
                 that.city = $(target).html();
-                if (this.el.is('input')) {
+                if (that.el.is('input')) {
                     that.el.val(that.pro + "-" + that.city);
                 } else {
                     that.el.html(that.pro + "-" + that.city);
@@ -191,7 +193,7 @@ var provinces = {
 
         var div = '<div class="navbar">' + a + '</div>';
 
-        $(".pro-picker").append(div);
+        $("body").append(div);
     };
 
     p.navEvent = function () {

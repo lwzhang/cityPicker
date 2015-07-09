@@ -1,6 +1,16 @@
 dl, dt, dd, ul {
     margin: 0;
+    padding: 0;
 }
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
 .picker-box {
     position: fixed;
     top: 0;
