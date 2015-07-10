@@ -93,7 +93,6 @@ var provinces = {
             var pickerBox = $(".picker-box");
             if (pickerBox[0]) {
                 pickerBox.show();
-                $(".navbar").show();
             } else {
                 this.create();
             }
@@ -153,13 +152,12 @@ var provinces = {
         var that = this;
         $(".pro-picker").on("click", function (e) {
             var target = e.target;
-            if (target.tagName.toLowerCase() == "dd") {
+            if ($(target).is("dd")) {
                 that.pro = $(target).html();
                 var letter = $(target).data("letter");
                 that.createCityList(letter, that.pro);
 
                 $(this).hide();
-                $(".navbar").hide();
             }
         });
     };
@@ -168,9 +166,9 @@ var provinces = {
         var that = this;
         $(".city-picker").on("click", function (e) {
             var target = e.target;
-            if (target.tagName.toLowerCase() == "li") {
+            if ($(target).is("li")) {
                 that.city = $(target).html();
-                if (that.el.is('input')) {
+                if (that.elType) {
                     that.el.val(that.pro + "-" + that.city);
                 } else {
                     that.el.html(that.pro + "-" + that.city);
@@ -193,7 +191,7 @@ var provinces = {
 
         var div = '<div class="navbar">' + a + '</div>';
 
-        $("body").append(div);
+        $(".picker-box").append(div);
     };
 
     p.navEvent = function () {
@@ -205,18 +203,32 @@ var provinces = {
 
         navBar.on("touchmove", function (e) {
             e.preventDefault();
-            var pos = {"x": e.originalEvent.touches[0].pageX, "y": e.originalEvent.touches[0].pageY};
+            var touch = e.originalEvent.touches[0];
+            var pos = {"x": touch.pageX, "y": touch.pageY};
             $(this).find("a").each(function (i, item) {
                 var offset = $(item).offset();
                 if (pos.x > offset.left && pos.x < (offset.left + $(item).width()) && pos.y > offset.top && pos.y < (offset.top + $(item).height())) {
                     location.href = item.href;
+                    that.createLetterPrompt($(item).html());
                 }
             });
         });
 
         navBar.on("touchend", function () {
             $(this).removeClass("active");
+            $(".prompt").hide();
         })
+    };
+
+    p.createLetterPrompt = function (letter) {
+        var prompt = $(".prompt");
+        if (prompt[0]) {
+            prompt.show();
+            prompt.html(letter);
+        } else {
+            var span = "<span class='prompt'>" + letter + "</span>";
+            $(".picker-box").append(span);
+        }
     };
 
     $.fn.CityPicker = function (options) {
