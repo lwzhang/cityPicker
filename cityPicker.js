@@ -197,24 +197,24 @@ var provinces = {
     p.navEvent = function () {
         var that = this;
         var navBar = $(".navbar");
+        var width = navBar.find("a").width();
+        var height = navBar.find("a").height();
         navBar.on("touchstart", function (e) {
-            var target = e.target;
             $(this).addClass("active");
-            that.createLetterPrompt($(target).html());
-            target.flag = true;
+            that.createLetterPrompt($(e.target).html());
         });
 
         navBar.on("touchmove", function (e) {
             e.preventDefault();
             var touch = e.originalEvent.touches[0];
             var pos = {"x": touch.pageX, "y": touch.pageY};
+            var x = pos.x, y = pos.y;
             $(this).find("a").each(function (i, item) {
-                if (item.flag) return;
                 var offset = $(item).offset();
-                if (pos.x > offset.left && pos.x < (offset.left + $(item).width()) && pos.y > offset.top && pos.y < (offset.top + $(item).height())) {
+                var left = offset.left, top = offset.top;
+                if (x > left && x < (left + width) && y > top && y < (top + height)) {
                     location.href = item.href;
                     that.changeLetter($(item).html());
-                    item.flag = true;
                 }
             });
         });
@@ -222,10 +222,6 @@ var provinces = {
         navBar.on("touchend", function () {
             $(this).removeClass("active");
             $(".prompt").hide();
-
-            $(this).find("a").each(function (i, item) {
-                item.flag = false;
-            });
         })
     };
 

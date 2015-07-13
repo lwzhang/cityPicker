@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e7eedc8-84c9-46b0-9ef2-3c47be67a065" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cityPicker.js" afterPath="$PROJECT_DIR$/cityPicker.js" />
     </list>
     <ignored path="cityPicker.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,8 +49,8 @@
       <file leaf-file-name="cityPicker.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cityPicker.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4577573">
-              <caret line="214" column="46" selection-start-line="214" selection-start-column="46" selection-end-line="214" selection-end-column="46" />
+            <state vertical-scroll-proportion="0.5160576">
+              <caret line="213" column="57" selection-start-line="213" selection-start-column="57" selection-end-line="213" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -82,8 +82,8 @@
         <option value="$PROJECT_DIR$/../APP3.1.2/insure - 副本.html" />
         <option value="$PROJECT_DIR$/../APP3.1.2/js/cityPicker.js" />
         <option value="$PROJECT_DIR$/cityPicker.css" />
-        <option value="$PROJECT_DIR$/cityPicker.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/cityPicker.js" />
       </list>
     </option>
   </component>
@@ -95,10 +95,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="803" />
-    <option name="y" value="144" />
+    <option name="x" value="550" />
     <option name="width" value="1436" />
-    <option name="height" value="788" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -211,7 +210,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="803" y="144" width="1436" height="788" extended-state="0" />
+    <frame x="550" y="0" width="1436" height="1040" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15070422" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -389,8 +388,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cityPicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4577573">
-          <caret line="214" column="46" selection-start-line="214" selection-start-column="46" selection-end-line="214" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.5160576">
+          <caret line="213" column="57" selection-start-line="213" selection-start-column="57" selection-end-line="213" selection-end-column="57" />
           <folding />
         </state>
       </provider>
