@@ -197,8 +197,11 @@ var provinces = {
     p.navEvent = function () {
         var that = this;
         var navBar = $(".navbar");
-        navBar.on("touchstart", function () {
+        navBar.on("touchstart", function (e) {
+            var target = e.target;
             $(this).addClass("active");
+            that.createLetterPrompt($(target).html());
+            target.flag = true;
         });
 
         navBar.on("touchmove", function (e) {
@@ -206,10 +209,12 @@ var provinces = {
             var touch = e.originalEvent.touches[0];
             var pos = {"x": touch.pageX, "y": touch.pageY};
             $(this).find("a").each(function (i, item) {
+                if (item.flag) return;
                 var offset = $(item).offset();
                 if (pos.x > offset.left && pos.x < (offset.left + $(item).width()) && pos.y > offset.top && pos.y < (offset.top + $(item).height())) {
                     location.href = item.href;
-                    that.createLetterPrompt($(item).html());
+                    that.changeLetter($(item).html());
+                    item.flag = true;
                 }
             });
         });
@@ -217,6 +222,10 @@ var provinces = {
         navBar.on("touchend", function () {
             $(this).removeClass("active");
             $(".prompt").hide();
+
+            $(this).find("a").each(function (i, item) {
+                item.flag = false;
+            });
         })
     };
 
@@ -224,11 +233,16 @@ var provinces = {
         var prompt = $(".prompt");
         if (prompt[0]) {
             prompt.show();
-            prompt.html(letter);
         } else {
             var span = "<span class='prompt'>" + letter + "</span>";
             $(".picker-box").append(span);
         }
+    };
+
+
+    p.changeLetter = function (letter) {
+        var prompt = $(".prompt");
+        prompt.html(letter);
     };
 
     $.fn.CityPicker = function (options) {
