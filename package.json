@@ -1,6 +1,6 @@
 {
-  "name": "citypicker",
-  "version": "0.0.3",
+  "name": "city-picker",
+  "version": "0.0.4",
   "description": "city picker",
   "main": "city picker",
   "scripts": {
@@ -12,6 +12,9 @@
   },
   "author": "lwzhang",
   "license": "MIT",
+  "keywords": [
+    "citypicker"
+  ],
   "bugs": {
     "url": "https://github.com/lwzhang/cityPicker/issues"
   },
