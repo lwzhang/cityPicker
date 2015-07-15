@@ -22,9 +22,9 @@ a {
     -webkit-user-select: none;
 }
 
-::-webkit-scrollbar {
-    width: 0;
-}
+/*::-webkit-scrollbar {*/
+    /*width: 0;*/
+/*}*/
 
 .picker-box dt {
     background-color: #dbdbdb;
